@@ -15,4 +15,8 @@ body{
 	background-color: cornsilk;
 	border: 1px black solid;
 	display: inline-block;
+	text-align: center;
+	font-size: 90pt;
+	line-height: 250px;
+	vertical-align: middle;
 }
