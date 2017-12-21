@@ -14,4 +14,11 @@
 	margin: 18px;
 	height: 225px;
 	width: 225px;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: bold;
+	color: cornflowerblue;
+	font-size: 60px;
+	text-align: center;
+	line-height: 225px;
+	vertical-align: middle;
 }
