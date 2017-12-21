@@ -1,3 +1,18 @@
 body{
+	/*background-color: maroon;*/
+	/*margin: 0 auto;*/
+}
+#board{
+	height: 800px;
+	width: 800px;
 	background-color: maroon;
+	border: 1px black solid;
+	margin: 0 auto;
+}
+.square{
+	height: 250px;
+	width: 250px;
+	background-color: cornsilk;
+	border: 1px black solid;
+	display: inline-block;
 }
