@@ -7,18 +7,24 @@ let isXsTurn = true
 const addAMark = (evt) => {
 	if($(evt.currentTarget).text() == "")
 		if (isXsTurn) {
-			$(evt.currentTarget).text("X")
+			$(evt.currentTarget).text("X");
 			// console.log(evt.currentTarget)
-			isXsTurn = false
+			isXsTurn = false;
 		} else {
 			// console.log(evt.currentTarget)
-			$(evt.currentTarget).text("O")
-			isXsTurn = true
+			$(evt.currentTarget).text("O");
+			isXsTurn = true;
 		}
 	else{
-		console.log('That spot has been taken, try again.')
+		console.log('That spot has been taken, try again.');
 	}	
 }
+
+const resetGame = () => {
+	$(".square").empty();
+}
+
+
 
 for(let i = 1; i <= 9; i++){
 	$newDiv = $('<div>');
@@ -32,6 +38,4 @@ for(let i = 1; i <= 9; i++){
 
 
 
-$('#clear-board').on('click', ()=>{
-	console.log('clicked')
-})
+$('#clear-board').on('click', resetGame)
