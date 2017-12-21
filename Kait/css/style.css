@@ -1,0 +1,17 @@
+#board {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	height: 800px;
+	width: 800px;
+	background-color: lightseagreen;
+}
+
+.square {
+	background-color: whitesmoke;
+	border: 1px solid black;
+	margin: 18px;
+	height: 225px;
+	width: 225px;
+}
