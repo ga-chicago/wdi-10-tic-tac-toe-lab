@@ -1,0 +1,9 @@
+
+
+.square{
+	display:inline-block;
+	background-color: orange;
+	height:200px;
+	width:200px;
+	margin:33px;
+}
