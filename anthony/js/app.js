@@ -4,8 +4,9 @@ const gameBoard = $('#board')
 
 for(let i = 1; i <= 9; i++){
 	$newDiv = $('<div>');
-	$newDiv.addClass("square")
-	gameBoard.append($newDiv)
+	$newDiv.addClass("square");
+	// $newDiv.on('click', someFunction);
+	gameBoard.append($newDiv);
 }
 
 
