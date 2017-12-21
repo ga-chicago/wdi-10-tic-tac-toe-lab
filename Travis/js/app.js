@@ -6,7 +6,7 @@ for(let i =0; i<9; i++){
 	//generate div dynamically 
 	//save to a variable
 	const $div = $('<div>');
-	$div.text([i]);
-	$div.addClass('square')
+	$div.text('X');
+	$div.addClass('square');
 	$div.appendTo('#board');
 }
