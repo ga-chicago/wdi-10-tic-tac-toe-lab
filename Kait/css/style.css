@@ -22,3 +22,13 @@
 	line-height: 225px;
 	vertical-align: middle;
 }
+
+.o-class {
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: bold;
+	color: palevioletred;
+	font-size: 60px;
+	text-align: center;
+	line-height: 225px;
+	vertical-align: middle;
+}
