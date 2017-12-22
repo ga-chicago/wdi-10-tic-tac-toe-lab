@@ -7,10 +7,7 @@ $("#clear-board").on("click",()=>{
 
 let $board = $("#board");
 
-// let someFunction = ()=>{
-// 	e.text("X");
-// 	console.log("click works X")
-// }
+let XvsO = true;
 
 for (var i = 0; i < 9; i++) {
 	let $newDiv = $("<div>").addClass("square");
@@ -20,5 +17,12 @@ for (var i = 0; i < 9; i++) {
 $(".square").on("click", ()=>{
 	let square = event.currentTarget; 
 	// console.log($square)
-	$(square).text("X");
+	if (XvsO === true){
+		$(square).text("X");
+		XvsO = false;
+	} else {
+		$(square).text("O");
+		XvsO = true;
+	}
+	
 });
