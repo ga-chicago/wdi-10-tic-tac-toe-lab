@@ -20,6 +20,11 @@ body{
 	border: solid 2px white;
 	line-height: 1.35;
 }
+.winner{
+	color: green;
+	font-size: 250px;
+	line-height: 1.09;
+}
 #clear-board{
 	width: 800px;
 	margin: 10px;
