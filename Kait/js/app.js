@@ -35,9 +35,9 @@ $('#start-button').on('click', ()=>{
 
 $('#clear-board').on('click', ()=>{
 	// console.log('Clicked!')
-	$('.square').text('')
+	$('.square').remove()
 	// because I used 'one' above I needed to reset the click, but I still only want it to be clicked once so I left that up there. 
-	$('.square').on('click', showX)
+	// $('.square').on('click', showX)
 	setBoard()
 })
 
