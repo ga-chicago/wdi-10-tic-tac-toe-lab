@@ -23,5 +23,6 @@ for(let i = 0; i < 9; i++){
 }
 
 $('#clear-board').on('click', ()=>{
-	console.log('Clicked!')
+	// console.log('Clicked!')
+	$('.square').text('')
 })

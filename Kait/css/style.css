@@ -1,3 +1,6 @@
+body {
+	display: flex;
+}
 #board {
 	display: flex;
 	flex-wrap: wrap;
@@ -5,7 +8,7 @@
 	align-items: center;
 	height: 800px;
 	width: 800px;
-	background-color: lightseagreen;
+	background-color: mediumseagreen;
 }
 
 .square {
@@ -31,4 +34,16 @@
 	text-align: center;
 	line-height: 225px;
 	vertical-align: middle;
+}
+
+#clear-board {
+	font-size: 18px;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: khaki;
+	border: 2px solid black;
+	height: 60px;
+	width: 200px;
+	margin: 10px;
 }
