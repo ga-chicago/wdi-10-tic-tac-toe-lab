@@ -12,15 +12,18 @@ function showX(e){
 	} else if (toggle === false){
 		$(e.currentTarget).text('X')
 		toggle = true;
-	}		
+	}
+
 
 }
 
 for(let i = 0; i < 9; i++){
 	let $div = $('<div>').attr('class', 'square');
 	$theBoard.append($div);
-	$div.on('click', showX)
+	$div.one('click', showX)
 }
+
+// $('.square').off('click')
 
 $('#clear-board').on('click', ()=>{
 	// console.log('Clicked!')
