@@ -75,3 +75,22 @@ button {
 	width: 200px;
 	margin: 10px;
 }
+
+@media all and (max-width: 1220) {
+	body {
+		display: flex;
+		flex-direction: column;
+		background-color: whitesmoke;
+	}	
+	#board {
+		/*display: flex;*/
+		/*flex-wrap: wrap;*/
+		justify-content: space-between;
+		align-items: center;
+		border: 2px solid black;
+		height: 375px;
+		width: 375px;
+		background-color: mediumaquamarine;
+	}
+
+}
