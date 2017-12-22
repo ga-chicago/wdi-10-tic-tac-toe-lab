@@ -1,6 +1,9 @@
 body{
-	background-color: white;
+	background-color: grey;
 	margin: 0 auto;
+	color: white;
+	font-size: 200px;
+	text-align: center;
 }
 #board{
 	height: 800px;
@@ -15,5 +18,11 @@ body{
 	width: 32.833%;
 	height: 32.833%;
 	border: solid 2px white;
-
+	line-height: 1.35;
+}
+#clear-board{
+	width: 800px;
+	margin: 10px;
+	height: 40px;
+	font-size: 20px;
 }
