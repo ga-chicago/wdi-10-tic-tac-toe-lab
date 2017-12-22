@@ -21,7 +21,7 @@ body{
 	line-height: 1.35;
 }
 .winner{
-	color: green;
+	color: limegreen;
 	font-size: 250px;
 	line-height: 1.09;
 }
@@ -42,12 +42,12 @@ body{
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 204, 3, 0.68); /* Black w/ opacity */
 }
 
 .modal-content {
     margin: auto;
-    width: 80%;
+    width: 99%;
     text-align: center;
     font-size: 100px !important;
+    color: red;
 }

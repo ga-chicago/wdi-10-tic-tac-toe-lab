@@ -15,7 +15,8 @@ let downStairs = [];
 let upstairs = [];
 
 function congratulate(player){
-	modal.style.display = "block";
+	$(".modal-content").text(player + " Wins!")
+	$modal.css("display","block");
 }
 
 function checkIfWon(player){ // Refactor this when you have time too much if else 
@@ -95,14 +96,16 @@ $("#clear-board").on("click", ()=>{
 	}
 })
 
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-
+$modal.on("click", ()=>{
+    $modal.css("display","none");
+   	$(".square").text("");
+	for(key in whoWon){
+		delete whoWon[key];
+	}
+	for (var i = 0; i < 9; i++) {
+		$("#cell"+ i).removeClass("winner");
+	}
+})
 
 
 
