@@ -86,4 +86,10 @@ $(".square").on("click", ()=>{
 
 $("#clear-board").on("click", ()=>{
 	$(".square").text("");
+	for(key in whoWon){
+		delete whoWon[key];
+	}
+	for (var i = 0; i < 9; i++) {
+		$("#cell"+ i).removeClass("winner");
+	}
 })
