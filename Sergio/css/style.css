@@ -18,12 +18,12 @@ body{
 	width: 32.833%;
 	height: 32.833%;
 	border: solid 2px white;
-	line-height: 1.35;
+	font-family: fantasy;
 }
 .winner{
 	color: limegreen;
 	font-size: 250px;
-	line-height: 1.09;
+	line-height: 1.4;
 }
 #clear-board{
 	width: 800px;
