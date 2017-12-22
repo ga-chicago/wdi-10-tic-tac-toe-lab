@@ -24,5 +24,8 @@ $(".square").on("click", ()=>{
 		$(square).text("O");
 		XvsO = true;
 	}
-	
 });
+
+$("#clear-board").on("click", ()=>{
+	$(".square").text("");
+})
