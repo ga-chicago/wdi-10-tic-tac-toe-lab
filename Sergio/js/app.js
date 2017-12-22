@@ -1,7 +1,6 @@
 
 let $modal = $("#myModal");
 let $board = $("#board");
-var modal = document.getElementById('myModal');
 let XvsO = true;
 let whoWon = {};
 
