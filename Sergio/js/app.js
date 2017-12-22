@@ -4,15 +4,6 @@ let $board = $("#board");
 let XvsO = true;
 let whoWon = {};
 
-let rowOne = [];
-let rowTwo = [];
-let rowThree = [];
-let columnOne = [];
-let columnTwo = [];
-let columnThree = [];
-let downStairs = [];
-let upstairs = [];
-
 function congratulate(player){
 	$(".modal-content").text(player + " Wins!")
 	$modal.css("display","block");
