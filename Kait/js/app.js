@@ -39,10 +39,9 @@ function setBoard() {
 	}
 }
 
-function checkWinnerO(){
+function checkWinner(){
 	for(let i = 0; i < oSquares.length; i++){
-		let idOfSquare = oSquares[i]
-		console.log(idOfSquare)
+		console.log(oSquares[i])
 		if (oSquares.includes('0') === true && oSquares.includes('4') === true && oSquares.includes('8') === true){
 			console.log('win');
 		} else if (oSquares.includes('2') === true && oSquares.includes('4') === true && oSquares.includes('6') === true){
@@ -62,42 +61,30 @@ function checkWinnerO(){
 		} else {
 			console.log('keep trying')
 		}
-
-	// if($('#0').text() === 'X' && $('#4').text() === 'X' && $('#8') === 'X'){
-	// 	console.log('X wins')
-	// } else if ($('#0').text() === 'O' && $('#4').text() === 'O' && $('#8') === 'O'){
-	// 	console.log('O wins')
-	// } else if ($('#2').text() === 'X' && $('#4').text() === 'X' && $('#6') === 'X'){
-	// 	console.log('X wins')
-	// } else if ($('#2').text() === 'O' && $('#4').text() === 'O' && $('#6') === 'O'){
-	// 	console.log('O wins')
-	// } else if ($('#0').text() === 'X' && $('#1').text() === 'X' && $('#2') === 'X'){
-	// 	console.log('X wins')
-	// } else if ($('#0').text() === 'O' && $('#1').text() === 'O' && $('#2') === 'O'){
-	// 	console.log('O wins')
-	// } else if ($('#3').text() === 'X' && $('#4').text() === 'X' && $('#5') === 'X'){
-	// 	console.log('X wins')	
-	// } else if ($('#3').text() === 'O' && $('#4').text() === 'O' && $('#5') === 'O'){
-	// 	console.log('O wins')
-	// } else if ($('#6').text() === 'X' && $('#7').text() === 'X' && $('#8') === 'X'){
-	// 	console.log('X wins')
-	// } else if ($('#6').text() === 'O' && $('#7').text() === 'O' && $('#8') === 'O'){
-	// 	console.log('O wins')
-	// } else if ($('#2').text() === 'X' && $('#5').text() === 'X' && $('#8') === 'X'){
-	// 	console.log('X wins')
-	// } else if ($('#2').text() === 'O' && $('#5').text() === 'O' && $('#8') === 'O'){
-	// 	console.log('O wins')	
-	// } else if ($('#1').text() === 'X' && $('#4').text() === 'X' && $('#7') === 'X'){
-	// 	console.log('X wins')
-	// } else if ($('#1').text() === 'O' && $('#4').text() === 'O' && $('#7') === 'O'){
-	// 	console.log('O wins')
-	// } else if ($('#0').text() === 'X' && $('#3').text() === 'X' && $('#6') === 'X'){
-	// 	console.log('X wins')
-	// } else if ($('#0').text() === 'O' && $('#3').text() === 'O' && $('#6') === 'O'){
-	// 	console.log('O wins')
-	// }
-
-	}									
+	}
+	
+	for(let i = 0; i < xSquares.length; i++){
+		console.log(xSquares[i])
+		if (xSquares.includes('0') === true && xSquares.includes('4') === true && xSquares.includes('8') === true){
+			console.log('win');
+		} else if (xSquares.includes('2') === true && xSquares.includes('4') === true && xSquares.includes('6') === true){
+			console.log('win');	
+		} else if (xSquares.includes('0') === true && xSquares.includes('1') === true && xSquares.includes('2') === true){
+			console.log('win');
+		} else if (xSquares.includes('3') === true && xSquares.includes('4') === true && xSquares.includes('5') === true){
+			console.log('win');
+		} else if (xSquares.includes('6') === true && xSquares.includes('7') === true && xSquares.includes('8') === true){
+			console.log('win');
+		} else if (xSquares.includes('2') === true && xSquares.includes('5') === true && xSquares.includes('8') === true){
+			console.log('win');
+		} else if (xSquares.includes('1') === true && xSquares.includes('4') === true && xSquares.includes('7') === true){
+			console.log('win');
+		} else if (xSquares.includes('0') === true && xSquares.includes('3') === true && xSquares.includes('6') === true){	
+			console.log('win');
+		} else {
+			console.log('keep trying')
+		}
+	}										
 }
 
 function gameOver(){
