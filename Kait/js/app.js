@@ -7,8 +7,9 @@ let yScore = 0;
 // MAX ROUND SHOULD BE 3
 let round = 0;
 
-let xSquares = [];
-let oSquares = [];
+let squares = [];
+
+
 
 function showX(evt){
 	// console.log(e.currentTarget)
@@ -21,6 +22,7 @@ function showX(evt){
 		toggle = true;
 	}
 	console.log(this)
+	squares.push($(evt.currentTarget).attr('id'))
 }
 
 
@@ -35,6 +37,8 @@ function setBoard() {
 }
 
 function checkWinner(){
+	for(let i = 0; i < squares.length; i++){
+
 	if($('#0').text() === 'X' && $('#4').text() === 'X' && $('#8') === 'X'){
 		console.log('X wins')
 	} else if ($('#0').text() === 'O' && $('#4').text() === 'O' && $('#8') === 'O'){
@@ -59,9 +63,17 @@ function checkWinner(){
 		console.log('X wins')
 	} else if ($('#2').text() === 'O' && $('#5').text() === 'O' && $('#8') === 'O'){
 		console.log('O wins')	
-	}  else if ($('#1').text() === 'X' && $('#4').text() === 'X' && $('#7') === 'X'){
+	} else if ($('#1').text() === 'X' && $('#4').text() === 'X' && $('#7') === 'X'){
 		console.log('X wins')
-	}							
+	} else if ($('#1').text() === 'O' && $('#4').text() === 'O' && $('#7') === 'O'){
+		console.log('O wins')
+	} else if ($('#0').text() === 'X' && $('#3').text() === 'X' && $('#6') === 'X'){
+		console.log('X wins')
+	} else if ($('#0').text() === 'O' && $('#3').text() === 'O' && $('#6') === 'O'){
+		console.log('O wins')
+	}
+
+	}									
 }
 
 function gameOver(){
