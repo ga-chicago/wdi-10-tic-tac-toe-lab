@@ -7,7 +7,8 @@ let yScore = 0;
 // MAX ROUND SHOULD BE 3
 let round = 0;
 
-let squares = [];
+let xSquares = [];
+let oSquares = [];
 
 
 
@@ -16,13 +17,15 @@ function showX(evt){
 	if (toggle === true) {
 		$(evt.currentTarget).toggleClass('o-class')
 		$(evt.currentTarget).text('O')
+		oSquares.push($(evt.currentTarget).attr('id'))
 		toggle = false;
 	} else if (toggle === false){
 		$(evt.currentTarget).text('X')
+		xSquares.push($(evt.currentTarget).attr('id'))
 		toggle = true;
 	}
 	console.log(this)
-	squares.push($(evt.currentTarget).attr('id'))
+	
 }
 
 
@@ -36,42 +39,63 @@ function setBoard() {
 	}
 }
 
-function checkWinner(){
-	for(let i = 0; i < squares.length; i++){
+function checkWinnerO(){
+	for(let i = 0; i < oSquares.length; i++){
+		let idOfSquare = oSquares[i]
+		console.log(idOfSquare)
+		if (oSquares.includes('0') === true && oSquares.includes('4') === true && oSquares.includes('8') === true){
+			console.log('win');
+		} else if (oSquares.includes('2') === true && oSquares.includes('4') === true && oSquares.includes('6') === true){
+			console.log('win');	
+		} else if (oSquares.includes('0') === true && oSquares.includes('1') === true && oSquares.includes('2') === true){
+			console.log('win');
+		} else if (oSquares.includes('3') === true && oSquares.includes('4') === true && oSquares.includes('5') === true){
+			console.log('win');
+		} else if (oSquares.includes('6') === true && oSquares.includes('7') === true && oSquares.includes('8') === true){
+			console.log('win');
+		} else if (oSquares.includes('2') === true && oSquares.includes('5') === true && oSquares.includes('8') === true){
+			console.log('win');
+		} else if (oSquares.includes('1') === true && oSquares.includes('4') === true && oSquares.includes('7') === true){
+			console.log('win');
+		} else if (oSquares.includes('0') === true && oSquares.includes('3') === true && oSquares.includes('6') === true){	
+			console.log('win');
+		} else {
+			console.log('keep trying')
+		}
 
-	if($('#0').text() === 'X' && $('#4').text() === 'X' && $('#8') === 'X'){
-		console.log('X wins')
-	} else if ($('#0').text() === 'O' && $('#4').text() === 'O' && $('#8') === 'O'){
-		console.log('O wins')
-	} else if ($('#2').text() === 'X' && $('#4').text() === 'X' && $('#6') === 'X'){
-		console.log('X wins')
-	} else if ($('#2').text() === 'O' && $('#4').text() === 'O' && $('#6') === 'O'){
-		console.log('O wins')
-	} else if ($('#0').text() === 'X' && $('#1').text() === 'X' && $('#2') === 'X'){
-		console.log('X wins')
-	} else if ($('#0').text() === 'O' && $('#1').text() === 'O' && $('#2') === 'O'){
-		console.log('O wins')
-	} else if ($('#3').text() === 'X' && $('#4').text() === 'X' && $('#5') === 'X'){
-		console.log('X wins')	
-	} else if ($('#3').text() === 'O' && $('#4').text() === 'O' && $('#5') === 'O'){
-		console.log('O wins')
-	} else if ($('#6').text() === 'X' && $('#7').text() === 'X' && $('#8') === 'X'){
-		console.log('X wins')
-	} else if ($('#6').text() === 'O' && $('#7').text() === 'O' && $('#8') === 'O'){
-		console.log('O wins')
-	} else if ($('#2').text() === 'X' && $('#5').text() === 'X' && $('#8') === 'X'){
-		console.log('X wins')
-	} else if ($('#2').text() === 'O' && $('#5').text() === 'O' && $('#8') === 'O'){
-		console.log('O wins')	
-	} else if ($('#1').text() === 'X' && $('#4').text() === 'X' && $('#7') === 'X'){
-		console.log('X wins')
-	} else if ($('#1').text() === 'O' && $('#4').text() === 'O' && $('#7') === 'O'){
-		console.log('O wins')
-	} else if ($('#0').text() === 'X' && $('#3').text() === 'X' && $('#6') === 'X'){
-		console.log('X wins')
-	} else if ($('#0').text() === 'O' && $('#3').text() === 'O' && $('#6') === 'O'){
-		console.log('O wins')
-	}
+	// if($('#0').text() === 'X' && $('#4').text() === 'X' && $('#8') === 'X'){
+	// 	console.log('X wins')
+	// } else if ($('#0').text() === 'O' && $('#4').text() === 'O' && $('#8') === 'O'){
+	// 	console.log('O wins')
+	// } else if ($('#2').text() === 'X' && $('#4').text() === 'X' && $('#6') === 'X'){
+	// 	console.log('X wins')
+	// } else if ($('#2').text() === 'O' && $('#4').text() === 'O' && $('#6') === 'O'){
+	// 	console.log('O wins')
+	// } else if ($('#0').text() === 'X' && $('#1').text() === 'X' && $('#2') === 'X'){
+	// 	console.log('X wins')
+	// } else if ($('#0').text() === 'O' && $('#1').text() === 'O' && $('#2') === 'O'){
+	// 	console.log('O wins')
+	// } else if ($('#3').text() === 'X' && $('#4').text() === 'X' && $('#5') === 'X'){
+	// 	console.log('X wins')	
+	// } else if ($('#3').text() === 'O' && $('#4').text() === 'O' && $('#5') === 'O'){
+	// 	console.log('O wins')
+	// } else if ($('#6').text() === 'X' && $('#7').text() === 'X' && $('#8') === 'X'){
+	// 	console.log('X wins')
+	// } else if ($('#6').text() === 'O' && $('#7').text() === 'O' && $('#8') === 'O'){
+	// 	console.log('O wins')
+	// } else if ($('#2').text() === 'X' && $('#5').text() === 'X' && $('#8') === 'X'){
+	// 	console.log('X wins')
+	// } else if ($('#2').text() === 'O' && $('#5').text() === 'O' && $('#8') === 'O'){
+	// 	console.log('O wins')	
+	// } else if ($('#1').text() === 'X' && $('#4').text() === 'X' && $('#7') === 'X'){
+	// 	console.log('X wins')
+	// } else if ($('#1').text() === 'O' && $('#4').text() === 'O' && $('#7') === 'O'){
+	// 	console.log('O wins')
+	// } else if ($('#0').text() === 'X' && $('#3').text() === 'X' && $('#6') === 'X'){
+	// 	console.log('X wins')
+	// } else if ($('#0').text() === 'O' && $('#3').text() === 'O' && $('#6') === 'O'){
+	// 	console.log('O wins')
+	// }
 
 	}									
 }
@@ -97,6 +121,8 @@ $('#next-round').on('click', ()=>{
 	// console.log('Clicked!')
 	// **removing the squares and rebuilding them allows the .one method to reset (basically)
 	$('.square').remove()
+	oSquares = [];
+	xSquares = [];
 	round++
 	setBoard()
 	gameOver()
