@@ -171,6 +171,7 @@ $('#reset').on('click', ()=>{
 	$('#X').text(xScore)
 	oScore = 0;
 	$('#O').text(oScore)
+	round = 0;
 	$('.square').remove()
 	setBoard()
 	console.log('clicked!')
