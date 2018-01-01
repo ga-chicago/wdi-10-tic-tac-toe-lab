@@ -4,6 +4,8 @@ let $theBoard = $('#board');
 let toggle = true;
 let xScore = 0;
 let oScore = 0;
+let xWon = false;
+let oWon = false
 // MAX ROUND SHOULD BE 3
 let round = 0;
 
@@ -11,7 +13,7 @@ let xSquares = [];
 let oSquares = [];
 
 
-
+// THIS FUNCTION WAS MOVED INTO THE SET BOARD FUNCTION
 // function showX(evt){
 // 	// console.log(e.currentTarget)
 // 	if (toggle === true) {
@@ -32,35 +34,35 @@ function checkWinner(){
 	for(let i = 0; i < oSquares.length; i++){
 		console.log(oSquares[i])
 		if (oSquares.includes('0') === true && oSquares.includes('4') === true && oSquares.includes('8') === true){
-			oScore++;
+			oWon = true;
 			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('2') === true && oSquares.includes('4') === true && oSquares.includes('6') === true){
-			oScore++;
+			oWon = true;
 			alert('O Wins!');
 			console.log('win');	
 		} else if (oSquares.includes('0') === true && oSquares.includes('1') === true && oSquares.includes('2') === true){
-			oScore++;
+			oWon = true;
 			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('3') === true && oSquares.includes('4') === true && oSquares.includes('5') === true){
-			oScore++;
+			oWon = true;
 			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('6') === true && oSquares.includes('7') === true && oSquares.includes('8') === true){
-			oScore++;
+			oWon = true;
 			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('2') === true && oSquares.includes('5') === true && oSquares.includes('8') === true){
-			oScore++;
+			oWon = true;
 			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('1') === true && oSquares.includes('4') === true && oSquares.includes('7') === true){
-			oScore++;
+			oWon = true;
 			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('0') === true && oSquares.includes('3') === true && oSquares.includes('6') === true){	
-			oScore++;
+			oWon = true;
 			alert('O Wins!');
 			console.log('win');
 		} else {
@@ -71,35 +73,35 @@ function checkWinner(){
 	for(let i = 0; i < xSquares.length; i++){
 		console.log(xSquares[i])
 		if (xSquares.includes('0') === true && xSquares.includes('4') === true && xSquares.includes('8') === true){
-			xScore++;
+			xWon = true;
 			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('2') === true && xSquares.includes('4') === true && xSquares.includes('6') === true){
-			xScore++;
+			xWon = true;
 			alert('X Wins!');
 			console.log('win');	
 		} else if (xSquares.includes('0') === true && xSquares.includes('1') === true && xSquares.includes('2') === true){
-			xScore++;
+			xWon = true;
 			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('3') === true && xSquares.includes('4') === true && xSquares.includes('5') === true){
-			xScore++;
+			xWon = true;
 			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('6') === true && xSquares.includes('7') === true && xSquares.includes('8') === true){
-			xScore++;
+			xWon = true;
 			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('2') === true && xSquares.includes('5') === true && xSquares.includes('8') === true){
-			xScore++;
+			xWon = true;
 			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('1') === true && xSquares.includes('4') === true && xSquares.includes('7') === true){
-			xScore++;
+			xWon = true;
 			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('0') === true && xSquares.includes('3') === true && xSquares.includes('6') === true){	
-			xScore++;
+			xWon = true;
 			alert('X Wins!');
 			console.log('win');
 		} else {
@@ -135,12 +137,8 @@ function gameOver(){
 	} else if (xScore === 2){
 		alert('X won!');
 	} else if (oScore === 2){
-		alert('Y won!');
-	} else if (xScore > oScore){
-		alert('X won!')
-	} else if (oScore > xScore){
-		alert('O won!')
-	}
+		alert('O won!');
+	} 
 }
 // gameOver()
 
@@ -157,6 +155,11 @@ $('#next-round').on('click', ()=>{
 	oSquares = [];
 	xSquares = [];
 	round++
+	if (xWon === true){
+		xScore++
+	} else if (oWon === true){
+		oScore++
+	}
 	$('#X').text(xScore)
 	$('#O').text(oScore)
 	setBoard()
@@ -175,8 +178,3 @@ $('#reset').on('click', ()=>{
 
 
 // console.log($('.square').attr('id'))
-/* GAME LOGIC:
-•if three letters appear in a row game over
-•if three letters appear in a row use a modal to notify player
-•if no letters appear in a row AND all square are filled notify players of stalemate*/
-
