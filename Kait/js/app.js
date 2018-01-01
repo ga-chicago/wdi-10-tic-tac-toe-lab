@@ -132,12 +132,12 @@ function setBoard() {
 }
 
 function gameOver(){
-	if (round === 3){
-		alert('Game over!');
-	} else if (xScore === 2){
+	if (xScore === 2){
 		alert('X won!');
 	} else if (oScore === 2){
 		alert('O won!');
+	} else if (round === 3){
+		alert('Game over!');
 	} 
 }
 // gameOver()

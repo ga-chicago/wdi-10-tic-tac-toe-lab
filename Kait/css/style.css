@@ -37,16 +37,17 @@ ol {
 	height: 800px;
 	width: 800px;
 	min-width: 348px;
+	min-height: 348px;
 	background-color: mediumaquamarine;
 }
 
 .square {
 	background-color: whitesmoke;
 	border: 1px solid black;
-	margin: 18px;
-	height: 225px;
-	width: 225px;
-	min-width: 68px;
+	margin: 2%;
+	height: 28%;
+	width: 28%;
+	/*min-width: 68px;*/
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: bold;
 	color: cornflowerblue;
