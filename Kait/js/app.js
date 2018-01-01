@@ -12,32 +12,21 @@ let oSquares = [];
 
 
 
-function showX(evt){
-	// console.log(e.currentTarget)
-	if (toggle === true) {
-		$(evt.currentTarget).toggleClass('o-class')
-		$(evt.currentTarget).text('O')
-		oSquares.push($(evt.currentTarget).attr('id'))
-		toggle = false;
-	} else if (toggle === false){
-		$(evt.currentTarget).text('X')
-		xSquares.push($(evt.currentTarget).attr('id'))
-		toggle = true;
-	}
-	console.log(this)
+// function showX(evt){
+// 	// console.log(e.currentTarget)
+// 	if (toggle === true) {
+// 		$(evt.currentTarget).toggleClass('o-class')
+// 		$(evt.currentTarget).text('O')
+// 		oSquares.push($(evt.currentTarget).attr('id'))
+// 		toggle = false;
+// 	} else if (toggle === false){
+// 		$(evt.currentTarget).text('X')
+// 		xSquares.push($(evt.currentTarget).attr('id'))
+// 		toggle = true;
+// 	}
+// 	console.log(this)
 	
-}
-
-
-
-function setBoard() {
-	for(let i = 0; i < 9; i++){
-		let $div = $('<div class="square"></div>').attr('id', [i]);
-		$theBoard.append($div);
-		// one method as apposed to on method! Only allows the user to click once.
-		$div.one('click', showX);
-	}
-}
+// }
 
 function checkWinner(){
 	for(let i = 0; i < oSquares.length; i++){
@@ -119,13 +108,38 @@ function checkWinner(){
 	}										
 }
 
+function setBoard() {
+	for(let i = 0; i < 9; i++){
+		let $div = $('<div class="square"></div>').attr('id', [i]);
+		$theBoard.append($div);
+		// one method as apposed to on method! Only allows the user to click once.
+		$div.one('click', (evt) =>{
+			if (toggle === true) {
+		$(evt.currentTarget).toggleClass('o-class')
+		$(evt.currentTarget).text('O')
+		oSquares.push($(evt.currentTarget).attr('id'))
+		toggle = false;
+	} else if (toggle === false){
+		$(evt.currentTarget).text('X')
+		xSquares.push($(evt.currentTarget).attr('id'))
+		toggle = true;
+	}
+	checkWinner()
+		});
+	}
+}
+
 function gameOver(){
 	if (round === 3){
 		alert('Game over!');
 	} else if (xScore === 2){
 		alert('X won!');
-	} else if (yScore === 2){
+	} else if (oScore === 2){
 		alert('Y won!');
+	} else if (xScore > oScore){
+		alert('X won!')
+	} else if (oScore > xScore){
+		alert('O won!')
 	}
 }
 // gameOver()
@@ -151,9 +165,12 @@ $('#next-round').on('click', ()=>{
 
 $('#reset').on('click', ()=>{
 	xScore = 0;
-	yScore = 0;
+	$('#X').text(xScore)
+	oScore = 0;
+	$('#O').text(oScore)
 	$('.square').remove()
 	setBoard()
+	console.log('clicked!')
 })
 
 
