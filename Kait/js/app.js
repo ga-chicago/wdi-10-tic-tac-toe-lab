@@ -3,7 +3,7 @@ console.log('Linked.')
 let $theBoard = $('#board');
 let toggle = true;
 let xScore = 0;
-let yScore = 0;
+let oScore = 0;
 // MAX ROUND SHOULD BE 3
 let round = 0;
 
@@ -43,20 +43,36 @@ function checkWinner(){
 	for(let i = 0; i < oSquares.length; i++){
 		console.log(oSquares[i])
 		if (oSquares.includes('0') === true && oSquares.includes('4') === true && oSquares.includes('8') === true){
+			oScore++;
+			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('2') === true && oSquares.includes('4') === true && oSquares.includes('6') === true){
+			oScore++;
+			alert('O Wins!');
 			console.log('win');	
 		} else if (oSquares.includes('0') === true && oSquares.includes('1') === true && oSquares.includes('2') === true){
+			oScore++;
+			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('3') === true && oSquares.includes('4') === true && oSquares.includes('5') === true){
+			oScore++;
+			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('6') === true && oSquares.includes('7') === true && oSquares.includes('8') === true){
+			oScore++;
+			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('2') === true && oSquares.includes('5') === true && oSquares.includes('8') === true){
+			oScore++;
+			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('1') === true && oSquares.includes('4') === true && oSquares.includes('7') === true){
+			oScore++;
+			alert('O Wins!');
 			console.log('win');
 		} else if (oSquares.includes('0') === true && oSquares.includes('3') === true && oSquares.includes('6') === true){	
+			oScore++;
+			alert('O Wins!');
 			console.log('win');
 		} else {
 			console.log('keep trying')
@@ -66,20 +82,36 @@ function checkWinner(){
 	for(let i = 0; i < xSquares.length; i++){
 		console.log(xSquares[i])
 		if (xSquares.includes('0') === true && xSquares.includes('4') === true && xSquares.includes('8') === true){
+			xScore++;
+			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('2') === true && xSquares.includes('4') === true && xSquares.includes('6') === true){
+			xScore++;
+			alert('X Wins!');
 			console.log('win');	
 		} else if (xSquares.includes('0') === true && xSquares.includes('1') === true && xSquares.includes('2') === true){
+			xScore++;
+			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('3') === true && xSquares.includes('4') === true && xSquares.includes('5') === true){
+			xScore++;
+			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('6') === true && xSquares.includes('7') === true && xSquares.includes('8') === true){
+			xScore++;
+			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('2') === true && xSquares.includes('5') === true && xSquares.includes('8') === true){
+			xScore++;
+			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('1') === true && xSquares.includes('4') === true && xSquares.includes('7') === true){
+			xScore++;
+			alert('X Wins!');
 			console.log('win');
 		} else if (xSquares.includes('0') === true && xSquares.includes('3') === true && xSquares.includes('6') === true){	
+			xScore++;
+			alert('X Wins!');
 			console.log('win');
 		} else {
 			console.log('keep trying')
@@ -111,6 +143,8 @@ $('#next-round').on('click', ()=>{
 	oSquares = [];
 	xSquares = [];
 	round++
+	$('#X').text(xScore)
+	$('#O').text(oScore)
 	setBoard()
 	gameOver()
 })
