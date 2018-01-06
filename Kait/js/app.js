@@ -36,37 +36,46 @@ function checkWinner(){
 		if (oSquares.includes('0') === true && oSquares.includes('4') === true && oSquares.includes('8') === true){
 			oWon = true;
 			alert('O Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (oSquares.includes('2') === true && oSquares.includes('4') === true && oSquares.includes('6') === true){
 			oWon = true;
 			alert('O Wins!');
-			console.log('win');	
+			// console.log('win');
+			return 'win';	
 		} else if (oSquares.includes('0') === true && oSquares.includes('1') === true && oSquares.includes('2') === true){
 			oWon = true;
 			alert('O Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (oSquares.includes('3') === true && oSquares.includes('4') === true && oSquares.includes('5') === true){
 			oWon = true;
 			alert('O Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (oSquares.includes('6') === true && oSquares.includes('7') === true && oSquares.includes('8') === true){
 			oWon = true;
 			alert('O Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (oSquares.includes('2') === true && oSquares.includes('5') === true && oSquares.includes('8') === true){
 			oWon = true;
 			alert('O Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (oSquares.includes('1') === true && oSquares.includes('4') === true && oSquares.includes('7') === true){
 			oWon = true;
 			alert('O Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (oSquares.includes('0') === true && oSquares.includes('3') === true && oSquares.includes('6') === true){	
 			oWon = true;
 			alert('O Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else {
-			console.log('keep trying')
+			console.log('keep trying');
+			return 'keep trying';
 		}
 	}
 	
@@ -75,37 +84,46 @@ function checkWinner(){
 		if (xSquares.includes('0') === true && xSquares.includes('4') === true && xSquares.includes('8') === true){
 			xWon = true;
 			alert('X Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (xSquares.includes('2') === true && xSquares.includes('4') === true && xSquares.includes('6') === true){
 			xWon = true;
 			alert('X Wins!');
-			console.log('win');	
+			// console.log('win');
+			return 'win';	
 		} else if (xSquares.includes('0') === true && xSquares.includes('1') === true && xSquares.includes('2') === true){
 			xWon = true;
 			alert('X Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (xSquares.includes('3') === true && xSquares.includes('4') === true && xSquares.includes('5') === true){
 			xWon = true;
 			alert('X Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (xSquares.includes('6') === true && xSquares.includes('7') === true && xSquares.includes('8') === true){
 			xWon = true;
 			alert('X Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (xSquares.includes('2') === true && xSquares.includes('5') === true && xSquares.includes('8') === true){
 			xWon = true;
 			alert('X Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (xSquares.includes('1') === true && xSquares.includes('4') === true && xSquares.includes('7') === true){
 			xWon = true;
 			alert('X Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else if (xSquares.includes('0') === true && xSquares.includes('3') === true && xSquares.includes('6') === true){	
 			xWon = true;
 			alert('X Wins!');
-			console.log('win');
+			// console.log('win');
+			return 'win';
 		} else {
-			console.log('keep trying')
+			// console.log('keep trying');
+			return 'keep trying';
 		}
 	}										
 }
