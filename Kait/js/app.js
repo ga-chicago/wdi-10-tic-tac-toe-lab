@@ -32,7 +32,7 @@ let oSquares = [];
 
 function checkWinner(){
 	for(let i = 0; i < oSquares.length; i++){
-		console.log(oSquares[i])
+		// console.log(oSquares[i])
 		if (oSquares.includes('0') === true && oSquares.includes('4') === true && oSquares.includes('8') === true){
 			oWon = true;
 			alert('O Wins!');
@@ -75,7 +75,7 @@ function checkWinner(){
 			return 'win';
 		} else {
 			console.log('keep trying');
-			return 'keep trying';
+			// return 'keep trying';
 		}
 	}
 	
@@ -144,7 +144,10 @@ function setBoard() {
 		xSquares.push($(evt.currentTarget).attr('id'))
 		toggle = true;
 	}
-	checkWinner()
+	// check for a winner each time a square is cliked
+	checkWinner();
+	// keep an eye out for when the game should end
+	gameOver();
 		});
 	}
 }
@@ -170,16 +173,23 @@ $('#next-round').on('click', ()=>{
 	// console.log('Clicked!')
 	// **removing the squares and rebuilding them allows the .one method to reset (basically)
 	$('.square').remove()
+	// remove the square in play from the x and o arrays
 	oSquares = [];
 	xSquares = [];
+	// advance the game to the next round
 	round++
+	// update the score depending on who won
 	if (xWon === true){
 		xScore++
 	} else if (oWon === true){
 		oScore++
 	}
-	$('#X').text(xScore)
-	$('#O').text(oScore)
+	// update the scoreboard to reflect who won the round
+	$('#X').text(xScore);
+	$('#O').text(oScore);
+	// reset the wins 
+	xWon = false;
+	oWon = false;
 	setBoard()
 	gameOver()
 })
